@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cloududu.sdkdemo"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!--用于读写入缓存数据到扩展存储卡-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  
+  <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <application>
+
+      <!-- 游戏互联分享回调 -->
+      <activity
+        android:name="com.cloududu.linkgame.u3d.lgapi.LGEntryActivity"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:exported="true" />
+
+      <activity-alias
+        android:name="${applicationId}.lgapi.LGEntryActivity"
+        android:exported="true"
+        android:targetActivity="cn.cm.lgapi.LGEntryActivity" />
+      
+    </application>
+
+</manifest>
