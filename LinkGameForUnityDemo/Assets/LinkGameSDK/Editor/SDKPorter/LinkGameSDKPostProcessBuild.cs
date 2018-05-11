@@ -6,7 +6,7 @@ using com.cloududu.unity3d.sdkporter;
 using System.IO;
 
 
-public static class ShareSDKPostProcessBuild {
+public static class LinkGameSDKPostProcessBuild {
 	[PostProcessBuild]
 	public static void onPostProcessBuild(BuildTarget target,string targetPath){
 		string unityEditorAssetPath = Application.dataPath;

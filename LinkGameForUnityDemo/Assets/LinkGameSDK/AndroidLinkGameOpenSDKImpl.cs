@@ -24,7 +24,7 @@ namespace com.cloududu.linkgame.unity3d
             }
             catch (Exception e) 
             {
-                Console.WriteLine("CMOpenSDK {0} Exception caught.", e);
+                Debug.LogErrorFormat("LinkGameOpenSDK {0} Exception caught.", e);
             }
         }
 

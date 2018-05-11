@@ -3,15 +3,13 @@
     android:versionCode="2"
     android:versionName="2.0" >
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
-
     <!--用于读写入缓存数据到扩展存储卡-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   
   <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="25" />
 
     <application>
 
@@ -25,7 +23,7 @@
       <activity-alias
         android:name="${applicationId}.lgapi.LGEntryActivity"
         android:exported="true"
-        android:targetActivity="cn.cm.lgapi.LGEntryActivity" />
+        android:targetActivity="com.cloududu.linkgame.u3d.lgapi.LGEntryActivity" />
       
     </application>
 
