@@ -68,5 +68,7 @@ public string AppSecret = "e9af7fa05833abf1296fb274fd5b0582";
   ![step_ios](md_res/step_ios.png)
 # Android
 
-Android项目只需修改Plugins->Android->LinkGameSDK->AndroidManifest配置文件中的包名即可,与自己的项目包名对应
-![step_android](md_res/step_android.png)
+- Android项目只需修改Plugins->Android->LinkGameSDK->AndroidManifest配置文件中的包名即可,与自己的项目包名对应
+  ![step_android](md_res/step_android.png)
+- 打包DemoAPK需要引用linkgame_u3d_demo.keystore文件,密码:123456
+  ![step_android_2](md_res/step_android_2.png)

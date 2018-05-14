@@ -74,6 +74,7 @@ namespace com.cloududu.linkgame.unity3d
             Debug.Log("AndroidLinkGameOpenSDKImpl ===> ShareWeblinkWithPath!");
             if (lgosdk != null)
             {
+                imagePath = "file://" + imagePath;
                 lgosdk.Call("shareWebPageWithUrl", title, text, url, imagePath);
                 Debug.Log("AndroidLinkGameOpenSDKImpl ===> Call -> shareWebPageWithPath!");
             }
