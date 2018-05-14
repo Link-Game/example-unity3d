@@ -123,7 +123,7 @@ extern "C" {
 
      @return 是否安装了游戏互联
      */
-    extern BOOL lgopensdk_isInstallYXHL();
+    extern BOOL lgopensdk_isInstallLinkGame();
 
 #ifdef __cplusplus
 }

@@ -226,7 +226,7 @@ void lgopensdk_requestShareWebLinkWithImageUrl(__CString title,__CString text,__
 
  @return 是否安装了游戏互联
  */
-extern BOOL lgopensdk_isInstallYXHL(){
-    return [[LGOpenSDK share]isInstallYXHL];
+extern BOOL lgopensdk_isInstallLinkGame(){
+    return [[LGOpenSDK share]isInstallLinkGame];
 }
 
