@@ -18,7 +18,7 @@ public static class LinkGameSDKPostProcessBuild {
 
 		XCProject project = new XCProject (targetPath);
 		//var files = System.IO.Directory.GetFiles( unityEditorAssetPath, "*.projmods", System.IO.SearchOption.AllDirectories );
-		var files = System.IO.Directory.GetFiles( unityEditorAssetPath + "/Editor/SDKPorter", "*.projmods", System.IO.SearchOption.AllDirectories);
+		var files = System.IO.Directory.GetFiles( unityEditorAssetPath + "/LinkGameSDK/Editor/SDKPorter", "*.projmods", System.IO.SearchOption.AllDirectories);
 		foreach( var file in files ) {
 			project.ApplyMod( file );
 		}
