@@ -4,7 +4,7 @@
 - UnitySDK示例基于 Unity5.x 版本  开发, 可快速集成
 - 集成包已包含IOS和Android双平台环境快速集成!
 
-#准备工作
+# 准备工作
 
 如下图,导入集成SDK包
 ![step1_1](md_res/step1_1.png)
@@ -13,7 +13,7 @@
 可在LinkGameSDK->Demo目录下快速体验SDK接口功能
 
 ![step2_1](md_res/step2_1.png)
-#配置SDK脚本
+# 配置SDK脚本
 
 如下图添加挂载SDK脚本
 
@@ -26,7 +26,7 @@ public string AppId = "0124578befjklmopuy";
 public string AppSecret = "e9af7fa05833abf1296fb274fd5b0582";
 ```
 
-#iOS
+# iOS
 SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开发者也可以自己添加其余需要的白名单配置
 - 配置代码文件 LinkGameSDK->Editor->SDKPorter->LinkGameSDKPostProcessBuild.cs
 ```
@@ -68,7 +68,7 @@ SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开�
 		plist.Save();
 	}
 ```
-#Android
+# Android
 
 Android项目只需修改Plugins->Android->LinkGameSDK->AndroidManifest配置文件中的包名即可,与自己的项目包名对应
 ![step_android](md_res/step_android.png)
