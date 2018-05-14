@@ -13,6 +13,10 @@ using com.cloududu.linkgame.unity3d;
 public class Demo : MonoBehaviour
 {
     [SerializeField]
+    string webUrl = "https://www.baidu.com/";
+    [SerializeField]
+    string imgUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526052914596&di=57574136a555da480c1869f9e020158a&imgtype=0&src=http%3A%2F%2Fwww.eventdove.com%2Fresource%2F20160522%2F442472_20160522165632791.png";
+    [SerializeField]
     LinkGameOpenSDK lgosdk;
     [SerializeField]
     Text logTxt;
@@ -23,20 +27,25 @@ public class Demo : MonoBehaviour
     [SerializeField]
     Button shareImgBtn;
     [SerializeField]
-    Button shareWebBtn;
+    Button shareWebUrlBtn;
+    [SerializeField]
+    Button shareWebPathBtn;
 
+    string imgPath;
     void Awake()
     {
         getUserBtn.onClick.AddListener(OnAuth);
         shareTxtBtn.onClick.AddListener(OnShareTxt);
         shareImgBtn.onClick.AddListener(OnShareImg);
-        shareWebBtn.onClick.AddListener(OnShareWeb);
+        shareWebUrlBtn.onClick.AddListener(OnShareWebUrl);
+        shareWebPathBtn.onClick.AddListener(OnShareWebPath);
     }
 
     // Use this for initialization
     void Start () {
         lgosdk.getUserHandler = GetUserResultHandler;
         lgosdk.shareHandler = OnShareResultHandler;
+        SaveImg();
     }
 	
 	// Update is called once per frame
@@ -90,27 +99,26 @@ public class Demo : MonoBehaviour
 
         BeginLog("开始分享本地图片!");
 
-        Image img = shareImgBtn.GetComponent<Image>();
-        Texture2D tex = img.sprite.texture;
-
-        string dataPath = Application.persistentDataPath;
-#if UNITY_EDITOR
-        dataPath = Application.dataPath + "/..";
-#endif
-
-        string path = dataPath + "/share.jpg";
-        System.IO.File.WriteAllBytes(path, tex.EncodeToJPG(50));
-
-        lgosdk.ShareImage(path);
+        lgosdk.ShareImage(imgPath);
     }
 
-    void OnShareWeb()
+    void OnShareWebUrl()
     {
         if (CheckApp() == false)
             return;
 
         BeginLog("开始分享图文链接!");
-        lgosdk.ShareWeblinkWithUrl("分享标题", "分享内容", "www.baidu.com", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526052914596&di=57574136a555da480c1869f9e020158a&imgtype=0&src=http%3A%2F%2Fwww.eventdove.com%2Fresource%2F20160522%2F442472_20160522165632791.png");
+        lgosdk.ShareWeblinkWithUrl("分享标题", "分享内容", webUrl, imgUrl);
+    }
+
+    void OnShareWebPath()
+    {
+        if (CheckApp() == false)
+            return;
+
+        BeginLog("开始分享图文链接!");
+        lgosdk.ShareWeblinkWithPath("分享标题", "分享内容", webUrl, imgPath);
+
     }
 
     void GetUserResultHandler(LGOpenResponseState state, string message, Hashtable result)
@@ -166,5 +174,19 @@ public class Demo : MonoBehaviour
         }
 
         AddLog(string.Format("{0} data[{1}]", msg, data));
+    }
+
+    void SaveImg()
+    {
+        Image img = shareImgBtn.GetComponent<Image>();
+        Texture2D tex = img.sprite.texture;
+
+        string dataPath = Application.persistentDataPath;
+#if UNITY_EDITOR
+        dataPath = Application.dataPath + "/..";
+#endif
+
+        imgPath = dataPath + "/share.jpg";
+        System.IO.File.WriteAllBytes(imgPath, tex.EncodeToJPG(50));
     }
 }
