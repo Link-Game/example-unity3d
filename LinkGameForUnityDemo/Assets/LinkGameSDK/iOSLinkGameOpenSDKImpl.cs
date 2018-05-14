@@ -23,7 +23,7 @@ namespace com.cloududu.linkgame.unity3d
         private static extern void lgopensdk_requestShareWebLinkWithImageUrl(string title, string text, string url, string imageUrl);
 
         [DllImport("__Internal")]
-        private static extern bool lgopensdk_isInstallYXHL();
+        private static extern bool lgopensdk_isInstallLinkGame();
 
         /// <summary>
         /// 构造函数
@@ -83,7 +83,7 @@ namespace com.cloududu.linkgame.unity3d
         {
             Debug.Log("iOSCMOpenSDKImpl ===> IsInstallApp!");
 
-            return lgopensdk_isInstallYXHL();
+            return lgopensdk_isInstallLinkGame();
         }
     }
 #endif
