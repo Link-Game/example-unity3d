@@ -1,6 +1,7 @@
 {
     "group": "LinkGameSDK",
     "libs": [],
+    "frameworks": [],
     "zips": [
         "LinkGameOpenSDK.zip"
     ],

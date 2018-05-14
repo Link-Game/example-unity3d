@@ -33,8 +33,8 @@ public static class LinkGameSDKPostProcessBuild {
 
 	}
 
-	private static void EditInfoPlist(string projPath){
-
+	private static void EditInfoPlist(string projPath)
+    {
 		XCPlist plist = new XCPlist (projPath);
 
 		//URL Scheme 添加
@@ -44,7 +44,7 @@ public static class LinkGameSDKPostProcessBuild {
                 <dict>
                   <key>CFBundleURLSchemes</key>
                   <array>
-                    <string>cmsy01789abefghjmqtuyz</string>
+                    <string>lg0124578befjklmopuy</string>
                   </array>
                   <key>CFBundleURLName</key>
                   <string>linkGameApp</string>
@@ -54,15 +54,9 @@ public static class LinkGameSDKPostProcessBuild {
 		//白名单添加
 		string LSAdd = @"
 		<key>LSApplicationQueriesSchemes</key>
-			<array>
+		<array>
 			<string>linkgame</string>
-		</array>
-        <key>NSMicrophoneUsageDescription</key>
-		<string></string>
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string></string>
-        <key>NSLocationWhenInUseUsageDescription</key>
-        <string></string>";
+		</array>";
 
 
 		//在plist里面增加一行

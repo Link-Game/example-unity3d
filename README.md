@@ -4,7 +4,7 @@
 - UnitySDK示例基于 Unity5.x 版本  开发, 可快速集成
 - 集成包已包含IOS和Android双平台环境快速集成!
 
-#准备工作
+# 准备工作
 
 如下图,导入集成SDK包
 ![step1_1](md_res/step1_1.png)
@@ -13,7 +13,7 @@
 可在LinkGameSDK->Demo目录下快速体验SDK接口功能
 
 ![step2_1](md_res/step2_1.png)
-#配置SDK脚本
+# 配置SDK脚本
 
 如下图添加挂载SDK脚本
 
@@ -26,12 +26,14 @@ public string AppId = "0124578befjklmopuy";
 public string AppSecret = "e9af7fa05833abf1296fb274fd5b0582";
 ```
 
-#iOS
-SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开发者也可以自己添加其余需要的白名单配置
+# iOS
+导出iOS平台XCode项目时需要配置白名单以及AppID,之后会自动配置到导出的XCode项目中
 - 配置代码文件 LinkGameSDK->Editor->SDKPorter->LinkGameSDKPostProcessBuild.cs
+- 将`linakgme`加入Scheme白名单
+- ​将`lg+AppID`配置到`CFBundleURLSchemes`中
 ```
-	private static void EditInfoPlist(string projPath){
-
+	private static void EditInfoPlist(string projPath)
+    {
 		XCPlist plist = new XCPlist (projPath);
 
 		//URL Scheme 添加
@@ -41,7 +43,7 @@ SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开�
                 <dict>
                   <key>CFBundleURLSchemes</key>
                   <array>
-                    <string>cmsy01789abefghjmqtuyz</string>
+                    <string>lg0124578befjklmopuy</string>
                   </array>
                   <key>CFBundleURLName</key>
                   <string>linkGameApp</string>
@@ -51,15 +53,9 @@ SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开�
 		//白名单添加
 		string LSAdd = @"
 		<key>LSApplicationQueriesSchemes</key>
-			<array>
+		<array>
 			<string>linkgame</string>
-		</array>
-        <key>NSMicrophoneUsageDescription</key>
-		<string></string>
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string></string>
-        <key>NSLocationWhenInUseUsageDescription</key>
-        <string></string>";
+		</array>";
 
 
 		//在plist里面增加一行
@@ -68,7 +64,9 @@ SDK已配置白名单,导出iOS平台XCode项目时会自动配置白名单,开�
 		plist.Save();
 	}
 ```
-#Android
+- iOS miniNum version 为8.0
+  ![step_ios](md_res/step_ios.png)
+# Android
 
 Android项目只需修改Plugins->Android->LinkGameSDK->AndroidManifest配置文件中的包名即可,与自己的项目包名对应
 ![step_android](md_res/step_android.png)
