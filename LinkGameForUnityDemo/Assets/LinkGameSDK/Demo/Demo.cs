@@ -12,7 +12,8 @@ using com.cloududu.linkgame.unity3d;
 
 public class Demo : MonoBehaviour
 {
-
+    [SerializeField]
+    LinkGameOpenSDK lgosdk;
     [SerializeField]
     Text logTxt;
     [SerializeField]
@@ -24,7 +25,6 @@ public class Demo : MonoBehaviour
     [SerializeField]
     Button shareWebBtn;
 
-    LinkGameOpenSDK lgosdk;
     void Awake()
     {
         getUserBtn.onClick.AddListener(OnAuth);
@@ -35,7 +35,6 @@ public class Demo : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        lgosdk = GetComponent<LinkGameOpenSDK>();
         lgosdk.getUserHandler = GetUserResultHandler;
         lgosdk.shareHandler = OnShareResultHandler;
     }

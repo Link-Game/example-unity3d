@@ -41,32 +41,56 @@ namespace com.cloududu.linkgame.unity3d
             lgopenAuth = new LinkGameOpenAuth(this);
             lgopenSDKUtils.InitSDK(AppId, AppSecret);
         }
-
+        /// <summary>
+        /// 检查是否安装游戏互联APP
+        /// </summary>
+        /// <returns></returns>
         public bool IsInstallApp()
         {
             return lgopenSDKUtils.IsInstallApp();
         }
 
+        /// <summary>
+        /// 登录授权,获取用户信息
+        /// </summary>
         public void GetUserInfo()
         {
             lgopenSDKUtils.Authorizing();
         }
-
+        /// <summary>
+        /// 分享文字
+        /// </summary>
+        /// <param name="text">内容</param>
         public void ShareText(string text)
         {
             lgopenSDKUtils.ShareText(text);
         }
-
+        /// <summary>
+        /// 分享图片
+        /// </summary>
+        /// <param name="filePath">图片本地路劲</param>
         public void ShareImage(string filePath)
         {
             lgopenSDKUtils.ShareImage(filePath);
         }
-
+        /// <summary>
+        /// 分享图文链接
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="text">内容</param>
+        /// <param name="url">链接</param>
+        /// <param name="imagePath">本地图片路劲</param>
         public void ShareWeblinkWithPath(string title, string text, string url, string imagePath)
         {
             lgopenSDKUtils.ShareWeblinkWithPath(title, text, url, imagePath);
         }
-
+        /// <summary>
+        /// 分享图文链接
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="text">内容</param>
+        /// <param name="url">链接</param>
+        /// <param name="imageUrl">图片链接</param>
         public void ShareWeblinkWithUrl(string title, string text, string url, string imageUrl)
         {
             lgopenSDKUtils.ShareWeblinkWithUrl(title, text, url, imageUrl);
@@ -220,12 +244,7 @@ namespace com.cloududu.linkgame.unity3d
                     break;
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="act">ActionType</param>
-        /// <param name="data">Json</param>
+        
         public delegate void ResultHandler(LGOpenResponseState state, string message, Hashtable data);
     }
 }

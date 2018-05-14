@@ -7,23 +7,23 @@ namespace com.cloududu.linkgame.unity3d
     public class iOSLinkGameOpenSDKImpl : LinkGameOpenSDKImpl
     {
         [DllImport("__Internal")]
-        private static extern void cmopensdk_initCMOpenSDK(string appID, string appSecret);
+        private static extern void lgopensdk_initLGOpenSDK(string appID, string appSecret);
         [DllImport("__Internal")]
         private static extern void ckopensdk_registerCallBack(string callBackObjectName, string callBackMethodName);
         [DllImport("__Internal")]
-        private static extern void cmopensdk_requestLogin();
+        private static extern void lgopensdk_requestLogin();
 
         [DllImport("__Internal")]
-        private static extern void cmopensdk_requestShareText(string text);
+        private static extern void lgopensdk_requestShareText(string text);
         [DllImport("__Internal")]
-        private static extern void cmopensdk_requestShareImageWithPath(string filePath);
+        private static extern void lgopensdk_requestShareImageWithPath(string filePath);
         [DllImport("__Internal")]
-        private static extern void cmopensdk_requestShareWebLinkWithImageFilePath(string title, string text, string url, string imageFilePath);
+        private static extern void lgopensdk_requestShareWebLinkWithImageFilePath(string title, string text, string url, string imageFilePath);
         [DllImport("__Internal")]
-        private static extern void cmopensdk_requestShareWebLinkWithImageUrl(string title, string text, string url, string imageUrl);
+        private static extern void lgopensdk_requestShareWebLinkWithImageUrl(string title, string text, string url, string imageUrl);
 
         [DllImport("__Internal")]
-        private static extern bool cmopensdk_isInstallYXHL();
+        private static extern bool lgopensdk_isInstallYXHL();
 
         /// <summary>
         /// 构造函数
@@ -41,49 +41,49 @@ namespace com.cloududu.linkgame.unity3d
         {
             Debug.Log("iOSCMOpenSDKImpl ===> InitSDK!");
 
-            cmopensdk_initCMOpenSDK(appId, appSecret);
+            lgopensdk_initLGOpenSDK(appId, appSecret);
         }
 
         public override void Authorizing()
         {
             Debug.Log("iOSCMOpenSDKImpl ===> Authorizing!");
 
-            cmopensdk_requestLogin();
+            lgopensdk_requestLogin();
         }
 
         public override void ShareText(string text)
         {
             Debug.Log("iOSCMOpenSDKImpl ===> ShareText!");
 
-            cmopensdk_requestShareText(text);
+            lgopensdk_requestShareText(text);
         }
 
         public override void ShareImage(string filePath)
         {
             Debug.Log("iOSCMOpenSDKImpl ===> ShareImage!");
 
-            cmopensdk_requestShareImageWithPath(filePath);
+            lgopensdk_requestShareImageWithPath(filePath);
         }
 
         public override void ShareWeblinkWithPath(string title, string text, string url, string imagePath)
         {
             Debug.Log("iOSCMOpenSDKImpl ===> ShareWeblinkWithPath!");
 
-            cmopensdk_requestShareWebLinkWithImageFilePath(title, text, url, imagePath);
+            lgopensdk_requestShareWebLinkWithImageFilePath(title, text, url, imagePath);
         }
 
         public override void ShareWeblinkWithUrl(string title, string text, string url, string imageUrl)
         {
             Debug.Log("iOSCMOpenSDKImpl ===> ShareWeblinkWithUrl!");
 
-            cmopensdk_requestShareWebLinkWithImageUrl(title, text, url, imageUrl);
+            lgopensdk_requestShareWebLinkWithImageUrl(title, text, url, imageUrl);
         }
 
         public override bool IsInstallApp()
         {
             Debug.Log("iOSCMOpenSDKImpl ===> IsInstallApp!");
 
-            return cmopensdk_isInstallYXHL();
+            return lgopensdk_isInstallYXHL();
         }
     }
 #endif

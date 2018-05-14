@@ -2,12 +2,12 @@
     "group": "LinkGameSDK",
     "libs": [],
     "zips": [
-        "CMOpenSDK.zip"
+        "LinkGameOpenSDK.zip"
     ],
     "headerpaths": [],
     "librarypaths": [],
     "files": [
-        "CMOpenSDK.zipCMOpenSDK/CMOpenSDK.framework"
+        "LinkGameOpenSDK/LinkGameOpenSDK.framework"
     ],
     "folders": [],
     "buildSettings": {

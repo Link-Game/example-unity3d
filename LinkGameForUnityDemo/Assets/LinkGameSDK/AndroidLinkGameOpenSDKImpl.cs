@@ -18,7 +18,7 @@ namespace com.cloududu.linkgame.unity3d
             Debug.Log("AndroidLinkGameOpenSDKImpl ===> AndroidLinkGameOpenSDKImpl!");
             try
             {
-                lgosdk = new AndroidJavaObject("cn.cmopendsdk.unity3d.domain.LinkGameSDK");
+                lgosdk = new AndroidJavaObject("com.cloududu.linkgame.opensdk.domain.LinkGameSDK");
 
                 lgosdk.Call("registerSyncCallBack", name, callback);
             }
@@ -74,7 +74,8 @@ namespace com.cloududu.linkgame.unity3d
             Debug.Log("AndroidLinkGameOpenSDKImpl ===> ShareWeblinkWithPath!");
             if (lgosdk != null)
             {
-                //Debug.Log("AndroidLinkGameOpenSDKImpl ===> Call -> shareWebPageWithUrl!");
+                lgosdk.Call("shareWebPageWithUrl", title, text, url, imagePath);
+                Debug.Log("AndroidLinkGameOpenSDKImpl ===> Call -> shareWebPageWithPath!");
             }
         }
 

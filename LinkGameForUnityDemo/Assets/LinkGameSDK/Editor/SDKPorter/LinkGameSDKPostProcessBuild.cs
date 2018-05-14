@@ -41,29 +41,13 @@ public static class LinkGameSDKPostProcessBuild {
 		string PlistAdd = @"  
             <key>CFBundleURLTypes</key>
 			<array>
-				<dict>
-					<key>CFBundleURLSchemes</key>
-					<array>
-						<string>wx6b7f3e78c2f722a4</string>
-					</array>
-					<key>CFBundleURLName</key>
-					<string>wxShare</string>
-				</dict>
                 <dict>
                   <key>CFBundleURLSchemes</key>
                   <array>
                     <string>cmsy01789abefghjmqtuyz</string>
                   </array>
                   <key>CFBundleURLName</key>
-                  <string>yxhlApp</string>
-                </dict>
-                <dict>
-                  <key>CFBundleURLSchemes</key>
-                  <array>
-                    <string>app23jj</string>
-                  </array>
-                  <key>CFBundleURLName</key>
-                  <string>jiujiuApp</string>
+                  <string>linkGameApp</string>
                 </dict>
 			</array>";
 
@@ -71,10 +55,7 @@ public static class LinkGameSDKPostProcessBuild {
 		string LSAdd = @"
 		<key>LSApplicationQueriesSchemes</key>
 			<array>
-			<string>whatsapp</string>
-			<string>wechat</string>
-			<string>weixin</string>
-			<string>cmsyyouxihulian</string>
+			<string>linkgame</string>
 		</array>
         <key>NSMicrophoneUsageDescription</key>
 		<string></string>
@@ -89,6 +70,4 @@ public static class LinkGameSDKPostProcessBuild {
 		plist.AddKey (LSAdd);
 		plist.Save();
 	}
-
-
 }

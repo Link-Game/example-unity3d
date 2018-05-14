@@ -1,5 +1,5 @@
 //
-//  CMOpenSDK+iOSBridgeUnity.h
+//  LGOpenSDK+iOSBridgeUnity.h
 //  UnityPluginProject
 //
 //  Created by 刘万林 on 2018/4/16.
@@ -18,7 +18,7 @@ extern "C" {
      @param appID APPID
      @param appSecret appSecret
      */
-    extern void cmopensdk_initCMOpenSDK(__CString appID, __CString appSecret);
+    extern void lgopensdk_initLGOpenSDK(__CString appID, __CString appSecret);
 
     /**
      注册回调
@@ -26,10 +26,10 @@ extern "C" {
      回调数据格式:
 
      {
-         "code":CMOpenSDKErrorCode,
+         "code":LGOpenSDKErrorCode,
          "msg":"",
          "data":{
-             "type":CMRequestType,
+             "type":LGRequestType,
              "refreshToken":""
             }
      }
@@ -57,7 +57,7 @@ extern "C" {
      请求使用游戏互联登录
 
      */
-    extern void cmopensdk_requestLogin(void);
+    extern void lgopensdk_requestLogin(void);
 
     /**
      发起分享文字的请求
@@ -65,7 +65,7 @@ extern "C" {
      @param text 要分享的文字
 
      */
-    extern void cmopensdk_requestShareText(__CString text);
+    extern void lgopensdk_requestShareText(__CString text);
 
     /**
      发起分享图片的请求
@@ -73,7 +73,7 @@ extern "C" {
      @param filePath 图片文件的路径
 
      */
-    extern void cmopensdk_requestShareImageWithPath(__CString filePath);
+    extern void lgopensdk_requestShareImageWithPath(__CString filePath);
 
     /**
      发起分享图片的请求
@@ -82,7 +82,7 @@ extern "C" {
      @param lenth 数据的长度(单位:Byte)
 
      */
-    extern void cmopensdk_requestShareImageWithData(const void * imageData,const int lenth);
+    extern void lgopensdk_requestShareImageWithData(const void * imageData,const int lenth);
 
     /**
      发起分享网页链接的请求
@@ -93,7 +93,7 @@ extern "C" {
      @param imageFilePath 图片文件的路径(请保证图片不大于32KB)
 
      */
-    extern void cmopensdk_requestShareWebLinkWithImageFilePath(__CString title,__CString text,__CString url,__CString imageFilePath);
+    extern void lgopensdk_requestShareWebLinkWithImageFilePath(__CString title,__CString text,__CString url,__CString imageFilePath);
 
     /**
      发起分享网页链接的请求
@@ -105,7 +105,7 @@ extern "C" {
      @param lenth 数据长度(单位:Byte)
 
      */
-    extern void cmopensdk_requestShareWebLinkWithImageFileData(__CString title,__CString text,__CString url,const void * fileData,const int lenth);
+    extern void lgopensdk_requestShareWebLinkWithImageFileData(__CString title,__CString text,__CString url,const void * fileData,const int lenth);
 
     /**
      发起分享网页链接的请求
@@ -116,14 +116,14 @@ extern "C" {
      @param imageUrl 图片的网络url(请使用HTTPS链接,否则iOS端可能无法正常显示)
 
      */
-    extern void cmopensdk_requestShareWebLinkWithImageUrl(__CString title,__CString text,__CString url,__CString imageUrl);
+    extern void lgopensdk_requestShareWebLinkWithImageUrl(__CString title,__CString text,__CString url,__CString imageUrl);
 
     /**
      检测是否安装了游戏互联
 
      @return 是否安装了游戏互联
      */
-    extern BOOL cmopensdk_isInstallYXHL();
+    extern BOOL lgopensdk_isInstallYXHL();
 
 #ifdef __cplusplus
 }
