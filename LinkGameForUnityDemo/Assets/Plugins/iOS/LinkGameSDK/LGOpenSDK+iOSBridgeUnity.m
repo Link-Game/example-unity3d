@@ -7,7 +7,7 @@
 
 #import "LGOpenSDK+iOSBridgeUnity.h"
 #import "UnityAppController.h"
-#import <LGOpenSDK/LGOpenSDK.h>
+#import <LinkGameOpenSDK/LGOpenSDK.h>
 
 #define _StrC2OC(__CStr) [NSString stringWithUTF8String:__CStr]
 

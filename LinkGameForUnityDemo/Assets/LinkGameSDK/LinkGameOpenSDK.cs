@@ -23,10 +23,13 @@ namespace com.cloududu.linkgame.unity3d
         public string AppId = "0124578befjklmopuy";
         public string AppSecret = "e9af7fa05833abf1296fb274fd5b0582";
 
-        LinkGameOpenAuth lgopenAuth;
-        LinkGameOpenSDKImpl lgopenSDKUtils;
-
+        /// <summary>
+        /// 授权登录回调
+        /// </summary>
         public ResultHandler getUserHandler;
+        /// <summary>
+        /// 分享回调
+        /// </summary>
         public ResultHandler shareHandler;
 
         private void Awake()
@@ -246,5 +249,8 @@ namespace com.cloududu.linkgame.unity3d
         }
         
         public delegate void ResultHandler(LGOpenResponseState state, string message, Hashtable data);
+
+        LinkGameOpenAuth lgopenAuth;
+        LinkGameOpenSDKImpl lgopenSDKUtils;
     }
 }
